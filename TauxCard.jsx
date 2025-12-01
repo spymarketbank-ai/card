@@ -2,37 +2,26 @@ import React from 'react';
 
 const TauxCard = ({ taux_realise = 85, taux_prevu = 100, titre = "Performance Mensuelle" }) => {
   const pourcentage = (taux_realise / taux_prevu) * 100;
-  const couleur = pourcentage >= 100 ? '#fbbf24' : pourcentage >= 75 ? '#60a5fa' : '#f87171';
+  const couleur = pourcentage >= 100 ? '#10b981' : pourcentage >= 75 ? '#3b82f6' : '#f59e0b';
 
   return (
     <div style={{
-      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      background: '#ffffff',
       borderRadius: '20px',
       padding: '30px',
-      border: 'none',
-      boxShadow: '0 10px 40px rgba(102, 126, 234, 0.3)',
+      border: '1px solid #e5e7eb',
+      boxShadow: '0 10px 40px rgba(0, 0, 0, 0.1)',
       maxWidth: '400px',
       width: '100%',
       position: 'relative',
       overflow: 'hidden'
     }}>
-      {/* Gradient de fond décoratif */}
-      <div style={{
-        position: 'absolute',
-        top: '-50%',
-        right: '-50%',
-        width: '200%',
-        height: '200%',
-        background: `radial-gradient(circle, ${couleur}40 0%, transparent 70%)`,
-        pointerEvents: 'none'
-      }} />
-
       {/* Titre */}
       <h3 style={{
         margin: '0 0 25px 0',
         fontSize: '20px',
         fontWeight: '600',
-        color: '#fff',
+        color: '#1f2937',
         position: 'relative'
       }}>
         {titre}
@@ -61,7 +50,7 @@ const TauxCard = ({ taux_realise = 85, taux_prevu = 100, titre = "Performance Me
           </div>
           <div style={{
             fontSize: '14px',
-            color: 'rgba(255, 255, 255, 0.7)',
+            color: '#9ca3af',
             fontWeight: '500'
           }}>
             Réalisé
@@ -72,7 +61,7 @@ const TauxCard = ({ taux_realise = 85, taux_prevu = 100, titre = "Performance Me
         <div style={{
           width: '2px',
           height: '60px',
-          background: 'linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.5), transparent)'
+          background: 'linear-gradient(180deg, transparent, #e5e7eb, transparent)'
         }} />
 
         {/* Taux Prévu */}
@@ -83,14 +72,14 @@ const TauxCard = ({ taux_realise = 85, taux_prevu = 100, titre = "Performance Me
           <div style={{
             fontSize: '32px',
             fontWeight: '700',
-            color: '#fff',
+            color: '#6b7280',
             marginBottom: '5px'
           }}>
             {taux_prevu}%
           </div>
           <div style={{
             fontSize: '14px',
-            color: 'rgba(255, 255, 255, 0.7)',
+            color: '#9ca3af',
             fontWeight: '500'
           }}>
             Prévu
@@ -102,7 +91,7 @@ const TauxCard = ({ taux_realise = 85, taux_prevu = 100, titre = "Performance Me
       <div style={{
         position: 'relative',
         height: '12px',
-        background: 'rgba(255, 255, 255, 0.2)',
+        background: '#f3f4f6',
         borderRadius: '10px',
         overflow: 'hidden',
         marginBottom: '15px'
@@ -110,10 +99,10 @@ const TauxCard = ({ taux_realise = 85, taux_prevu = 100, titre = "Performance Me
         <div style={{
           height: '100%',
           width: `${Math.min(pourcentage, 100)}%`,
-          background: `linear-gradient(90deg, ${couleur}, #ffffff)`,
+          background: `linear-gradient(90deg, ${couleur}, ${couleur}dd)`,
           borderRadius: '10px',
           transition: 'width 1s ease-out',
-          boxShadow: `0 0 20px ${couleur}`
+          boxShadow: `0 0 15px ${couleur}60`
         }} />
       </div>
 
@@ -121,7 +110,7 @@ const TauxCard = ({ taux_realise = 85, taux_prevu = 100, titre = "Performance Me
       <div style={{
         textAlign: 'center',
         fontSize: '16px',
-        color: 'rgba(255, 255, 255, 0.9)',
+        color: '#4b5563',
         fontWeight: '600',
         position: 'relative'
       }}>
@@ -135,11 +124,10 @@ const TauxCard = ({ taux_realise = 85, taux_prevu = 100, titre = "Performance Me
         right: '20px',
         padding: '6px 14px',
         borderRadius: '20px',
-        background: 'rgba(255, 255, 255, 0.25)',
-        backdropFilter: 'blur(10px)',
-        border: `1px solid rgba(255, 255, 255, 0.4)`,
+        background: `${couleur}15`,
+        border: `1px solid ${couleur}40`,
         fontSize: '12px',
-        color: '#ffffff',
+        color: couleur,
         fontWeight: '600',
         textTransform: 'uppercase',
         letterSpacing: '0.5px'
@@ -155,7 +143,7 @@ export default function App() {
   return (
     <div style={{
       minHeight: '100vh',
-      background: '#ffffff',
+      background: '#f3f4f6',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
